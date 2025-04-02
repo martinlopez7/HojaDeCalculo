@@ -17,6 +17,14 @@ public class HojaDeCalculo {
         }
     }
 
+    public void ordenarAscendente(int filaInicio, int filaFin, int columnaActual){
+
+    }
+
+    public void ordenarDescendente(int filaInicio, int filaFin, int columnaActual){
+        
+    }
+
     public Celda getCelda(int fila, int columna) {
         return celdas[fila][columna];
     }

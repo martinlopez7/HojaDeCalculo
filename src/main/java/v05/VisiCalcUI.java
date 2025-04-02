@@ -84,7 +84,7 @@ public class VisiCalcUI {
                 editarCeldaActual();
                 break;
             case 'O':
-                ordenarCeldaActual();
+                ordenarColumnaActual();
                 break;
             case 'Q':
                 return false;
@@ -102,11 +102,14 @@ public class VisiCalcUI {
         celdaActual.setContenido(texto);
     }
 
-    private void ordenarCeldaActual() {
-        System.out.println("Celda inicio: ");
-        String inputCeldaInicial = scanner.next();
-        System.out.println("Celda fin: ");
-        String inputCeldaFinal = scanner.next();
+    private void ordenarColumnaActual() {
+        System.out.print("Fila inicio: ");
+        int inputFilaInicial = scanner.nextInt();
+        System.out.print("Fila fin: ");
+        int inputFilaFinal = scanner.nextInt();
+        System.out.print("Ascendente (A) o descendente (D)");
+        char inputAscendenteDescendente = scanner.next().charAt(0);
+        viewport.ordenar(inputFilaInicial, inputFilaFinal, inputAscendenteDescendente);
         
     }
 }
