@@ -107,7 +107,7 @@ public class VisiCalcUI {
         int inputFilaInicial = scanner.nextInt();
         System.out.print("Fila fin: ");
         int inputFilaFinal = scanner.nextInt();
-        System.out.print("Ascendente (A) o descendente (D)");
+        System.out.print("Ascendente (A) o descendente (D): ");
         char inputAscendenteDescendente = scanner.next().charAt(0);
         viewport.ordenar(inputFilaInicial, inputFilaFinal, inputAscendenteDescendente);
         

@@ -89,15 +89,7 @@ public class Viewport {
     }
 
     public void ordenar(int filaInicial, int filaFinal, char ascendenteDescendente){
-
-        if(ascendenteDescendente=='A'){
-            System.out.println(columnaCursor);
-            hoja.ordenarAscendente(filaInicial, filaFinal, columnaCursor);
-        }else{
-            System.out.println(columnaCursor);
-            hoja.ordenarDescendente(filaInicial, filaFinal, columnaCursor);
-        }
-
+        hoja.ordenarCeldas(filaInicial, filaFinal, columnaCursor, ascendenteDescendente);
     }
 
 }

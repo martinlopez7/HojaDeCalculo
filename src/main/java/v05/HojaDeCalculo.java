@@ -17,14 +17,37 @@ public class HojaDeCalculo {
         }
     }
 
-    public void ordenarAscendente(int filaInicio, int filaFin, int columnaActual){
+    public void ordenarCeldas(int filaInicio, int filaFin, int columnaActual, char ascendenteDescendente) {
+        if (filaInicio < 0 || filaFin >= FILAS || filaInicio > filaFin) {
+            return;
+        }
+        boolean ordenAscendente = (ascendenteDescendente == 'A');
+        for (int i = filaInicio; i < filaFin - 1; i++) {
+            for (int j = filaInicio; j < filaFin - 1; j++) {
+                int valorActual = Integer.parseInt(celdas[j][columnaActual].getContenido());
+                int valorSiguiente = Integer.parseInt(celdas[j + 1][columnaActual].getContenido());
 
+                if (ordenAscendente) {
+                    if (valorActual > valorSiguiente) {
+                        for (int k = 0; k < COLUMNAS; k++) {
+                            String temp = celdas[j][k].getContenido();
+                            celdas[j][k].setContenido(celdas[j + 1][k].getContenido());
+                            celdas[j + 1][k].setContenido(temp);
+                        }
+                    }
+                } else {
+                    if (valorActual < valorSiguiente) {
+                        for (int k = 0; k < COLUMNAS; k++) {
+                            String temp = celdas[j][k].getContenido();
+                            celdas[j][k].setContenido(celdas[j + 1][k].getContenido());
+                            celdas[j + 1][k].setContenido(temp);
+                        }
+                    }
+                }
+            }
+        }
     }
-
-    public void ordenarDescendente(int filaInicio, int filaFin, int columnaActual){
-        
-    }
-
+    
     public Celda getCelda(int fila, int columna) {
         return celdas[fila][columna];
     }
@@ -35,5 +58,5 @@ public class HojaDeCalculo {
 
     public int getNumeroDeColumnas() {
         return COLUMNAS;
-    }    
+    }
 }
